@@ -98,7 +98,7 @@ void CustomerAccounts::searchAcc(int accNo){
             cout << "Account Number: " << accItr->first << endl;
             auto accItr2 = begin(accItr->second);
             for(; accItr2 != end(accItr->second); accItr2++){
-                cout << accItr2->first << " " << accItr2->second << endl;
+                cout << accItr2->first << " : " << accItr2->second << endl;
             }
         }
     }
@@ -171,6 +171,25 @@ string CustomerAccounts::getAccInfo(int accNo, string info){
     }
 
     return info1;
+}
+
+void CustomerAccounts::editInfo(int accNo, string info, string change){
+    int hashVal = accHash(accNo);
+    auto& accDetails = customerAccounts[hashVal];
+    auto accItr = begin(accDetails);
+
+    for(; accItr != end(accDetails); accItr++){
+        if(accItr->first == accNo){
+            auto accItr2 = begin(accItr->second);
+            for(; accItr2 != end(accItr->second); accItr2++){
+                if(accItr2->first == info){
+                    (accItr2->second).assign(change);
+                    break;
+                }
+            }
+            break;
+        }
+    }
 }
 
 CustomerAccounts customerAccountDatabase;

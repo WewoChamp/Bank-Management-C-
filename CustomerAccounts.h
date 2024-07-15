@@ -4,7 +4,7 @@
 #include <iostream>
 #include <list>
 #include <vector>
-#include <cstring>
+#include <string>
 using namespace std;
 
 //Hashtable of account detail
@@ -25,6 +25,7 @@ class CustomerAccounts {
     bool doesAccExist(int accNo);
     bool doesPasswordMatch(int accNo, string password);
     string getAccInfo (int accNo, string info);
+    void editInfo (int accNo, string info, string change);
     CustomerAccounts();
 
 };

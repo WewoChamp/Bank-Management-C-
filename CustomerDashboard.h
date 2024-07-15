@@ -5,6 +5,9 @@
 #include <string>
 #include "CustomerAccounts.h"
 #include "CustomerSignIn.h"
+#include "Deposit.h"
+#include "Withdrawal.h"
+#include "Transfer.h"
 
 using namespace std;
 

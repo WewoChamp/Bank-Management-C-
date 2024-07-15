@@ -17,6 +17,7 @@ CustomerLogIn::CustomerLogIn(){
         if(accNo == 0){
             CustomerSignIn();
         }
+        genAccNo = accNo;
         cout << "Enter Password or 0 to go back: " << ends;
         cin >> password;
         cout << endl;

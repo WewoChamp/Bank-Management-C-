@@ -2,14 +2,13 @@
 using namespace std;
 
 HomePage::HomePage(){
-        while (logIn != "1" && logIn != "2" && logIn != "3" && logIn != "CUSTOMER" && logIn != "ADMIN" && logIn != "STAFF"){
+        while (logIn != "1" && logIn != "2" && logIn != "3" && logIn != "CUSTOMER" && logIn != "STAFF"){
             cout << "*******************************" << endl;
             cout << "Bank Management" << endl;
             cout << "*******************************" << endl;
             cout << "Sign in as: " << endl;
             cout << "1. Customer" << endl;
-            cout << "2. Admin" << endl;
-            cout << "3. Staff" << endl;
+            cout << "2. Staff" << endl;
             
             cout << "Enter Choice : " << ends;
             cin >> logIn;
@@ -21,11 +20,7 @@ HomePage::HomePage(){
                 CustomerSignIn();
             }
 
-            if(logIn == "2" || logIn == "ADMIN"){
-                //Admin();
-            }
-
-            if(logIn == "3" || logIn == "STAFF"){
+            if(logIn == "2" || logIn == "STAFF"){
                 //Staff();
             } 
         }
