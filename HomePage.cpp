@@ -21,7 +21,7 @@ HomePage::HomePage(){
             }
 
             if(logIn == "2" || logIn == "STAFF"){
-                //Staff();
+                StaffSignIn();
             } 
         }
 }

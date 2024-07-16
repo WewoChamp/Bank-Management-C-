@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <cctype>
 #include "CustomerSignIn.h"
+#include "StaffSignIn.h"
 using namespace std;
 
 class HomePage{

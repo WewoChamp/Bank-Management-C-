@@ -1,5 +1,5 @@
-#ifndef CUSTOMERACCOUNTS_H
-#define CUSTOMERACCOUNTS_H
+#ifndef ACCOUNTS_H
+#define ACCOUNTS_H
 
 #include <iostream>
 #include <list>
@@ -9,11 +9,11 @@ using namespace std;
 
 //Hashtable of account detail
 
-class CustomerAccounts {
+class Accounts {
     private:
     //Stores accounts in groups
     static const int noOfAccGroupings = 10;
-    list<pair<int, list<pair<string, string> > > > customerAccounts[noOfAccGroupings];
+    list<pair<int, list<pair<string, string> > > > accounts[noOfAccGroupings];
 
     public:
     bool isEmpty() const;
@@ -26,11 +26,14 @@ class CustomerAccounts {
     bool doesPasswordMatch(int accNo, string password);
     string getAccInfo (int accNo, string info);
     void editInfo (int accNo, string info, string change);
-    CustomerAccounts();
+    Accounts();
 
 };
 
-extern CustomerAccounts customerAccountDatabase;
+extern Accounts customerAccountDatabase;
 extern int genAccNo;
+
+extern Accounts staffAccountDatabase;
+extern int genStaffAccNo;
 
 #endif

@@ -1,14 +1,15 @@
-#ifndef CUSTOMERNEWACCOUNT_H
-#define CUSTOMERNEWACCOUNT_H
+#ifndef STAFFNEWACCOUNT_H
+#define STAFFNEWACCOUNT_H
 
 #include <iostream>
 #include <string>
 #include "Accounts.h"
-#include "CustomerSignIn.h"
-#include "CustomerDashboard.h"
+#include "StaffSignIn.h"
+#include "StaffDashboard.h"
+
 using namespace std;
 
-class CustomerNewAccount{
+class StaffNewAccount {
     public:
     string password;
     string passwordCheck;
@@ -16,7 +17,7 @@ class CustomerNewAccount{
     string amount;
     string dob;
 
-    CustomerNewAccount();
+    StaffNewAccount();
 };
 
 #endif

@@ -1,14 +1,14 @@
-#include "CustomerSignIn.h"
+#include "StaffSignIn.h"
 using namespace std;
 
-CustomerSignIn::CustomerSignIn(){
+StaffSignIn::StaffSignIn(){
     while(logIn != "1" && logIn != "2" && logIn != "3"){
         cout << "*******************************" << endl;
-        cout << "Customer Sign in" << endl;
+        cout << "Staff Sign in" << endl;
         cout << "*******************************" << endl;
         cout << "Would you like to" << endl;
-        cout << "1. Log in as an existing customer." << endl;
-        cout << "2. Create a new account." << endl;
+        cout << "1. Log in as an existing staff member." << endl;
+        cout << "2. Create a new staff account." << endl;
         cout << "3. exit" << endl;
 
         cout << "Enter Choice : " << ends;
@@ -18,10 +18,10 @@ CustomerSignIn::CustomerSignIn(){
         transform(logIn.begin(), logIn.end(), logIn.begin(), ::toupper);
 
         if(logIn == "1"){
-            CustomerLogIn();
+            StaffLogIn();
         }
         if(logIn == "2"){
-            CustomerNewAccount();
+            StaffNewAccount();
         }
         if(logIn == "3"){
             HomePage();

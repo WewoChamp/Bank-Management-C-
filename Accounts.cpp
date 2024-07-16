@@ -1,19 +1,19 @@
-#include "CustomerAccounts.h"
+#include "Accounts.h"
 #include <list>
 #include <cstring>
 #include <utility>
 #include <vector>
 using namespace std;
 
-CustomerAccounts::CustomerAccounts(){
+Accounts::Accounts(){
     
 }
 
-bool CustomerAccounts::isEmpty() const{
+bool Accounts::isEmpty() const{
     int sum;
 
     for(int i = 0; i < noOfAccGroupings; i++){
-        sum += customerAccounts[i].size();
+        sum += accounts[i].size();
     }
 
     if(!sum){
@@ -22,14 +22,14 @@ bool CustomerAccounts::isEmpty() const{
     return false;
 }
 
-int CustomerAccounts::accHash(int key){
+int Accounts::accHash(int key){
     return key % noOfAccGroupings; //Hash determines the grouping that each
                                    //acc stays in
 }
 
-void CustomerAccounts::insertAcc(int accNo, string password, string name, string amount, string dob){
+void Accounts::insertAcc(int accNo, string password, string name, string amount, string dob){
     int hashVal = accHash(accNo);
-    auto& accDetails = customerAccounts[hashVal];
+    auto& accDetails = accounts[hashVal];
     auto accItr = begin(accDetails);
     bool accExists = false;
     
@@ -51,9 +51,9 @@ void CustomerAccounts::insertAcc(int accNo, string password, string name, string
     }
 }
 
-void CustomerAccounts::removeAcc(int accNo){
+void Accounts::removeAcc(int accNo){
     int hashVal = accHash(accNo);
-    auto& accDetails = customerAccounts[hashVal];
+    auto& accDetails = accounts[hashVal];
     auto accItr = begin(accDetails);
     bool accExists = false;
     
@@ -71,12 +71,12 @@ void CustomerAccounts::removeAcc(int accNo){
     }
 }
 
-void CustomerAccounts::printAcc(){
+void Accounts::printAcc(){
     for(int i = 0; i < noOfAccGroupings; i++){
-        if(customerAccounts[i].size() == 0) continue;
+        if(accounts[i].size() == 0) continue;
 
-        auto accItr = begin(customerAccounts[i]);
-        for(; accItr != end(customerAccounts[i]); accItr++){
+        auto accItr = begin(accounts[i]);
+        for(; accItr != end(accounts[i]); accItr++){
             cout << "Account Number: " << accItr->first << endl;
             auto accItr2 = begin(accItr->second);
             for(; accItr2 != end(accItr->second); accItr2++){
@@ -86,9 +86,9 @@ void CustomerAccounts::printAcc(){
     }
 }
 
-void CustomerAccounts::searchAcc(int accNo){
+void Accounts::searchAcc(int accNo){
     int hashVal = accHash(accNo);
-    auto& accDetails = customerAccounts[hashVal];
+    auto& accDetails = accounts[hashVal];
     auto accItr = begin(accDetails);
     bool accExists = false;
 
@@ -108,12 +108,12 @@ void CustomerAccounts::searchAcc(int accNo){
     }
 }
 
-bool CustomerAccounts::doesAccExist(int accNo){
+bool Accounts::doesAccExist(int accNo){
     if(isEmpty()){
         return false;
     }
     int hashVal = accHash(accNo);
-    auto& accDetails = customerAccounts[hashVal];
+    auto& accDetails = accounts[hashVal];
     auto accItr = begin(accDetails);
     bool accExists = false;
     
@@ -127,9 +127,9 @@ bool CustomerAccounts::doesAccExist(int accNo){
     return accExists;
 }
 
-bool CustomerAccounts::doesPasswordMatch(int accNo, string password){
+bool Accounts::doesPasswordMatch(int accNo, string password){
     int hashVal = accHash(accNo);
-    auto& accDetails = customerAccounts[hashVal];
+    auto& accDetails = accounts[hashVal];
     auto accItr = begin(accDetails);
     bool isMatch = false;
 
@@ -151,9 +151,9 @@ bool CustomerAccounts::doesPasswordMatch(int accNo, string password){
     return isMatch;
 }
 
-string CustomerAccounts::getAccInfo(int accNo, string info){
+string Accounts::getAccInfo(int accNo, string info){
     int hashVal = accHash(accNo);
-    auto& accDetails = customerAccounts[hashVal];
+    auto& accDetails = accounts[hashVal];
     auto accItr = begin(accDetails);
     string info1;
 
@@ -173,9 +173,9 @@ string CustomerAccounts::getAccInfo(int accNo, string info){
     return info1;
 }
 
-void CustomerAccounts::editInfo(int accNo, string info, string change){
+void Accounts::editInfo(int accNo, string info, string change){
     int hashVal = accHash(accNo);
-    auto& accDetails = customerAccounts[hashVal];
+    auto& accDetails = accounts[hashVal];
     auto accItr = begin(accDetails);
 
     for(; accItr != end(accDetails); accItr++){
@@ -192,6 +192,10 @@ void CustomerAccounts::editInfo(int accNo, string info, string change){
     }
 }
 
-CustomerAccounts customerAccountDatabase;
+Accounts customerAccountDatabase;
 
 int genAccNo = 0;
+
+Accounts staffAccountDatabase;
+
+int genStaffAccNo = 0;

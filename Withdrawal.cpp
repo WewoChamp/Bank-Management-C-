@@ -25,7 +25,7 @@ Withdrawal::Withdrawal(){
         cout << deduction << " successfully withdrawn." << endl;
         newAmount = customerAccountDatabase.getAccInfo(genAccNo, "amount");
         cout << "NEW ACCOUNT BALANCE: " << newAmount << endl;
-        cout << "Enter 1 to make another deposit or any other key to go back to the dashboard: " << ends;
+        cout << "Enter 1 to make another withdrawal or any other key to go back to the dashboard: " << ends;
         cin >> choice;
         choice.erase(std::remove_if(choice.begin(), choice.end(), ::isspace), choice.end());
         transform(choice.begin(), choice.end(), choice.begin(), ::toupper);
