@@ -192,6 +192,28 @@ void Accounts::editInfo(int accNo, string info, string change){
     }
 }
 
+bool Accounts::doesParamExist(int accNo, string param){
+    int hashVal = accHash(accNo);
+    auto& accDetails = accounts[hashVal];
+    auto accItr = begin(accDetails);
+    bool paramExists = false;
+
+    for(; accItr != end(accDetails); accItr++){
+        if(accItr->first == accNo){
+            auto accItr2 = begin(accItr->second);
+            for(; accItr2 != end(accItr->second); accItr2++){
+                if(accItr2->first == param){
+                    paramExists = true;
+                    break;
+                }
+            }
+            break;
+        }
+    }
+
+    return paramExists;
+}
+
 Accounts customerAccountDatabase;
 
 int genAccNo = 0;

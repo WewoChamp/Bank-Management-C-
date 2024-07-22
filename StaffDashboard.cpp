@@ -32,6 +32,18 @@ StaffDashboard::StaffDashboard(){
         cout << endl;
     }
 
+    if(choice == "1"){
+        EditCustomerAccount();
+    }
+
+    if(choice == "2"){
+        StaffTranForCust();
+    }
+
+    if (choice == "3"){
+        StaffMakeCustAcc();
+    }
+
     if(choice == "7"){
         StaffSignIn();
     }

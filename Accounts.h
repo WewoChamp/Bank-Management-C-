@@ -26,6 +26,7 @@ class Accounts {
     bool doesPasswordMatch(int accNo, string password);
     string getAccInfo (int accNo, string info);
     void editInfo (int accNo, string info, string change);
+    bool doesParamExist (int accNo, string param);
     Accounts();
 
 };

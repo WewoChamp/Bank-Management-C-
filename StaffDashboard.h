@@ -4,6 +4,9 @@
 #include <iostream>
 #include <string>
 #include "StaffSignIn.h"
+#include "EditCustomerAccount.h"
+#include "StaffMakeCustAcc.h"
+#include "StaffTranForCust.h"
 
 using namespace std;
 
