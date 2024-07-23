@@ -7,6 +7,9 @@
 #include "EditCustomerAccount.h"
 #include "StaffMakeCustAcc.h"
 #include "StaffTranForCust.h"
+#include "StaffDelCustAcc.h"
+#include "StaffSearchCustAcc.h"
+#include "StaffPrintAllCustAcc.h"
 
 using namespace std;
 

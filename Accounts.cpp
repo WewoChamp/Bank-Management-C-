@@ -77,11 +77,14 @@ void Accounts::printAcc(){
 
         auto accItr = begin(accounts[i]);
         for(; accItr != end(accounts[i]); accItr++){
+            cout << "*******************************" << endl;
             cout << "Account Number: " << accItr->first << endl;
+            cout << "*******************************" << endl;
             auto accItr2 = begin(accItr->second);
             for(; accItr2 != end(accItr->second); accItr2++){
                 cout << accItr2->first << " : " << accItr2->second << endl;
             }
+            cout << "*******************************" << endl;
         }
     }
 }
@@ -95,11 +98,14 @@ void Accounts::searchAcc(int accNo){
     for(; accItr != end(accDetails); accItr++){
         if(accItr->first == accNo){
             accExists = true;
+            cout << "*******************************" << endl;
             cout << "Account Number: " << accItr->first << endl;
+            cout << "*******************************" << endl;
             auto accItr2 = begin(accItr->second);
             for(; accItr2 != end(accItr->second); accItr2++){
                 cout << accItr2->first << " : " << accItr2->second << endl;
             }
+            cout << "*******************************" << endl;
         }
     }
 

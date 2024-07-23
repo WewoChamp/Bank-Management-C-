@@ -1,5 +1,5 @@
-#ifndef STAFFDELCUSTACC_H
-#define STAFFDELCUSTACC_H
+#ifndef STAFFSEARCHCUSTACC_H
+#define STAFFSEARCHCUSTACC_H
 
 #include <iostream>
 #include <string>
@@ -8,14 +8,12 @@
 
 using namespace std;
 
-class StaffDelCustAcc {
+class StaffSearhCustAcc {
     public:
     int accNo;
-    string name;
     string choice = "1";
-    string choice2 = "2";
 
-    StaffDelCustAcc();
+    StaffSearhCustAcc();
 };
 
 #endif

@@ -40,8 +40,20 @@ StaffDashboard::StaffDashboard(){
         StaffTranForCust();
     }
 
-    if (choice == "3"){
+    if(choice == "3"){
         StaffMakeCustAcc();
+    }
+
+    if(choice == "4"){
+        StaffDelCustAcc();
+    }
+
+    if(choice == "5"){
+        StaffSearhCustAcc();
+    }
+
+    if(choice == "6"){
+        StaffPrintAllCustAcc();
     }
 
     if(choice == "7"){
